@@ -1,0 +1,264 @@
+/* Colores de la página */
+:root {
+  --acento: hsl(210, 60%, 35%);
+  --acento-claro: hsl(210, 60%, 92%);
+  --texto: #222222;
+  --texto-suave: #5a6270;
+  --fondo: #f4f6f8;
+  --superficie: #ffffff;
+  --borde: #e2e6ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--texto);
+  background-color: var(--fondo);
+}
+
+/* Columna centrada */
+.contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Intro */
+.intro {
+  background-color: var(--acento);
+  color: white;
+  padding: 2rem 0;
+}
+
+.intro h1 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 2.25rem;
+}
+
+.intro p {
+  margin: 0;
+}
+
+.intro-etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+/* Barra de navegación (se queda pegada arriba al bajar) */
+.selector {
+  background-color: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+}
+
+.selector .contenedor {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pestana {
+  padding: 0.75rem 1.25rem;
+  color: var(--texto-suave);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+}
+
+.pestana:hover,
+.pestana.activa {
+  color: var(--acento);
+}
+
+.pestana.activa {
+  border-bottom-color: var(--acento);
+}
+
+/* Tarjeta de cada CV */
+main {
+  padding: 1.5rem 0;
+}
+
+.cv {
+  background-color: var(--superficie);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.oculto {
+  display: none;
+}
+
+/* Cabecera del CV: en el móvil en columna; desde 600px, en fila */
+.cv-cabecera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+@media (min-width: 600px) {
+  .cv-cabecera {
+    flex-direction: row;
+    text-align: left;
+    gap: 1.5rem;
+  }
+}
+
+.foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cv h2 {
+  margin: 0;
+  color: var(--acento);
+}
+
+.cv-subtitulo {
+  margin: 0.25rem 0 0.5rem;
+  color: var(--texto-suave);
+}
+
+.contacto {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contacto a {
+  color: var(--acento);
+  text-decoration: none;
+}
+
+.contacto a:hover {
+  text-decoration: underline;
+}
+
+/* Apartados */
+.apartado {
+  margin-top: 1.5rem;
+}
+
+.apartado h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--acento);
+}
+
+.apartado p {
+  margin: 0;
+}
+
+/* Experiencia y formación: título a la izquierda, fecha a la derecha */
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.lista li:last-child {
+  border-bottom: none;
+}
+
+/* Experiencia: el título se pulsa para abrir la explicación */
+.lista details {
+  flex: 1;            /* ocupa el ancho libre y deja la fecha a la derecha */
+  min-width: 250px;   /* si no cabe (móvil), la fecha baja a otra línea */
+}
+
+.lista summary {
+  cursor: pointer;
+}
+
+.lista summary:hover {
+  color: var(--acento);
+}
+
+.lista details p {
+  margin-top: 0.25rem;
+  color: var(--texto-suave);
+}
+
+.fecha {
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+}
+
+/* Habilidades como etiquetas */
+.habilidades {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.habilidades li {
+  position: relative;   /* referencia para colocar el texto .info */
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background-color: var(--acento-claro);
+  color: var(--acento);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Texto que aparece encima de la etiqueta al pasar el ratón */
+.info {
+  display: none;
+  position: absolute;
+  bottom: 100%;   /* justo encima de la etiqueta */
+  left: 0;
+  margin-bottom: 0.4rem;
+  width: max-content;
+  max-width: 240px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  background-color: #222222;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: center;
+  z-index: 1;
+}
+
+.habilidades li:hover .info {
+  display: block;
+}
+
+/* Pie */
+.pie {
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}

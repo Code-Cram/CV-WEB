@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Ajustar a diferentes displays -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV de Pedro y Marc · Práctica 1A</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- Intro -->
+  <header class="intro">
+    <div class="contenedor">
+      <p class="intro-etiqueta">Computación Distribuida · Práctica 1A</p>
+      <h1>Pedro y Marc</h1>
+      <p>
+        Esta web es nuestra práctica: un currículum de cada uno hecho con HTML, CSS y
+        JavaScript a partir de los ejemplos de los tutoriales de W3Schools.
+        Elige abajo de quién quieres ver el CV.
+      </p>
+    </div>
+  </header>
+
+  <!-- Barra de navegación: elegir CV -->
+  <nav class="selector" aria-label="Elegir currículum">
+    <div class="contenedor">
+      <a class="pestana" href="#cv-pedro">Pedro</a>
+      <a class="pestana" href="#cv-marc">Marc</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="contenedor">
+
+      <!-- CV de Pedro -->
+      <section id="cv-pedro" class="cv">
+
+        <div class="cv-cabecera">
+          <img class="foto" src="img/pedro.jpg" alt="Foto de Pedro">
+          <div>
+            <h2>Pedro Barros</h2>
+            <p class="cv-subtitulo">Estudiante de 3.º del Grado en Ciencia e Ingeniería de Datos · UAM</p>
+            <ul class="contacto">
+              <li><a href="mailto:pedro.barros@estudiante.uam.es">pedro.barros@estudiante.uam.es</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="apartado">
+          <h3>Sobre mí</h3>
+          <p>Estudiante de 3.º del Grado en Ciencia e Ingeniería de Datos en la Universidad Autónoma
+             de Madrid. Me gusta el tratamiento de datos y el desarrollo web a partir de los datos extraídos.</p>
+        </section>
+
+        <!-- Experiencia: <details> abre la explicación al pulsar el título -->
+        <section class="apartado">
+          <h3>Experiencia</h3>
+          <ul class="lista">
+            <li>
+              <details>
+                <summary><strong>Proyecto de análisis de carga de trabajo</strong></summary>
+                <p>Trabajo para una empresa: extracción de datos con SQL y Python, procesado en Python
+                   y generación de informes en HTML con CSS y JavaScript.</p>
+              </details>
+              <span class="fecha">Verano 2026</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="apartado">
+          <h3>Formación</h3>
+          <ul class="lista">
+            <li>
+              <span><strong>Grado en Ciencia e Ingeniería de Datos</strong> · Universidad Autónoma de Madrid</span>
+              <span class="fecha">2024 – actualidad</span>
+            </li>
+            <li>
+              <span><strong>Bachillerato</strong> · IES Eusebio da Guarda, A Coruña</span>
+              <span class="fecha">2022 – 2024</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Habilidades: el <span class="info"> aparece encima al pasar el ratón -->
+        <section class="apartado">
+          <h3>Habilidades</h3>
+          <ul class="habilidades">
+            <li>Python <span class="info">Programación concurrente y POO</span></li>
+            <li>SQL <span class="info">Queries hechas en las asignaturas de modelado y arquitecturas de bases de datos</span></li>
+            <li>MATLAB</li>
+            <li>HTML, CSS y JS <span class="info">Proyectos propios</span></li>
+            <li>Git</li>
+          </ul>
+        </section>
+
+        <section class="apartado">
+          <h3>Idiomas</h3>
+          <p>Español (nativo) · Inglés (C1)</p>
+        </section>
+
+      </section>
+
+      <!-- CV de Marc -->
+      <section id="cv-marc" class="cv">
+
+        <div class="cv-cabecera">
+          <img class="foto" src="img/marc.jpg" alt="Foto de Marc">
+          <div>
+            <h2>Marc Martínez Arias</h2>
+            <p class="cv-subtitulo">Estudiante de 3.º del Grado en Ciencia e Ingeniería de Datos · UAM</p>
+            <ul class="contacto">
+              <li><a href="mailto:marc.martineza@estudiante.uam.es">marc.martineza@estudiante.uam.es</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="apartado">
+          <h3>Sobre mí</h3>
+          <p>Estudiante de Ciencia de Datos con fuerte enfoque analítico y experiencia en liderazgo de
+             equipos. Busco aplicar mi capacidad de resolución de problemas y mis habilidades comunicativas
+             en un entorno de voluntariado para generar un impacto social positivo.</p>
+        </section>
+
+        <section class="apartado">
+          <h3>Experiencia</h3>
+          <ul class="lista">
+            <li>
+              <details>
+                <summary><strong>Socorrista acuático profesional</strong></summary>
+                <p>Atención al público, gestión de emergencias y trabajo en equipo en un puesto de alta responsabilidad.</p>
+              </details>
+              <span class="fecha">Julio – Agosto 2024</span>
+            </li>
+            <li>
+              <details>
+                <summary><strong>Delegado de curso, portavoz y presidente del Consejo de Estudiantes de la EPS</strong></summary>
+                <p>Representación de la facultad ante la universidad, coordinación entre estudiantes,
+                   profesorado y administración, y organización de reuniones y eventos.</p>
+              </details>
+            </li>
+          </ul>
+        </section>
+
+        <section class="apartado">
+          <h3>Formación</h3>
+          <ul class="lista">
+            <li>
+              <span><strong>Grado en Ciencia e Ingeniería de Datos</strong> · Universidad Autónoma de Madrid</span>
+              <span class="fecha">2024 – actualidad</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="apartado">
+          <h3>Habilidades</h3>
+          <ul class="habilidades">
+            <li>Python <span class="info">Programación concurrente y POO</span></li>
+            <li>SQL <span class="info">Queries hechas en las asignaturas de modelado y arquitecturas de bases de datos</span></li>
+            <li>MATLAB</li>
+            <li>HTML, CSS y JS <span class="info">Proyectos propios</span></li>
+            <li>Git</li>
+          </ul>
+        </section>
+
+        <section class="apartado">
+          <h3>Idiomas</h3>
+          <p>Español (nativo) · Inglés (B2)</p>
+        </section>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Pie: el año lo actualiza JS -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p>© <span id="anio">2026</span> Pedro y Marc · Práctica 1A</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
